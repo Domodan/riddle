@@ -18,6 +18,8 @@ module Riddle
     end
 
     def sphinx_version
+      puts "CALL: #{indexer}"
+      puts "VERSION DETECTION: #{`#{indexer} 2>&1`.split(/\n/).first}"
       `#{indexer} 2>&1`[/Sphinx (\d+\.\d+(\.\d+|(?:-dev|(\-id64)?\-beta)))/, 1]
     rescue
       nil
