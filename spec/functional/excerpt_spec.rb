@@ -13,6 +13,7 @@ describe "Sphinx Excepts", :live => true do
       :docs   => ["Mary, Mary, quite contrary."]
     )
 
+    puts controller.sphinx_version.inspect
     if controller.sphinx_version.to_i >= 3
       excerpts.should == [
         '<span class="match">Mary, Mary</span>, quite contrary.'
